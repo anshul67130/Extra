@@ -47,7 +47,7 @@ void bubbleSort(int* arr, int size){
 void linearSearch(int* arr, int size, int target){
     for (int i=0; i<size; i++){
         if (arr[i]==target){
-            printf("%d found at index %d\n",target,i);
+            printf("%d found at index %d\n",target,i+1);
             return;
         }
     }
@@ -59,7 +59,7 @@ void binarySearch(int* arr, int size, int target){
     while(s <= e){
         mid = s + (e - s) / 2;
         if (arr[mid] == target){
-            printf("%d found at index %d\n", target, mid);
+            printf("%d found at index %d\n", target, mid+1);
             return;
         }
         else if(arr[mid] < target){
@@ -108,7 +108,7 @@ int main(){
                 scanf("%d", &value);
                 printf("Enter index: ");
                 scanf("%d", &index);
-                insert(arr, size, index, value);
+                insert(arr, size, index-1, value);
                 size++;
                 printf("Array after insertion: ");
                 print(arr, size);
@@ -117,7 +117,7 @@ int main(){
             case 3 :
                 printf("Enter index: ");
                 scanf("%d", &index);
-                delete(arr, size, index);
+                delete(arr, size, index-1);
                 size--;
                 printf("Array after deletion: ");
                 print(arr, size);
