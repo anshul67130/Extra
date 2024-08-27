@@ -100,6 +100,20 @@ dNode* deletePrev(dNode* head, dNode* p){
     return head;
   }
 }
+
+Node *reverse(Node * ptr){
+  Node *prev = NULL;
+  Node *next = NULL;
+  Node *current = ptr;
+  while (current != NULL){
+    next = current->next;
+      current->next = prev;
+      prev = current;
+      current = next;
+  }
+  return prev;
+  }
+
 int main(){
   Node *first, *second , *third, *fourth, *fifth;
   first = createNode(1);
